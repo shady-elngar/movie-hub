@@ -1,0 +1,33 @@
+ 
+ 
+ <div class="row">
+    <div class="header col-md-4 d-flex align-items-center justify-content-center py-2">
+      <h2>trending movies</h2>
+      <h1>new</h1>
+    </div>
+      <div *ngFor="let movies of trendingMovies" class="col-md-2 py-3">
+
+        <a [routerLink]="['/MovieDetails', movies.id]">
+          <div class="movies">
+
+          <div class="img">
+           <div class="overlay">
+            <h4>Show Details</h4>
+           </div>
+            <img [src]="imagePrefix + movies.poster_path" alt="movie images" class="w-100">
+          </div>
+
+          <div class="movie-info text-center">   
+            <h6 class="pt-3">{{movies.title}}</h6>
+            <p>{{movies.release_date}}</p>
+            <div class="ratings" ><h5>{{movies.vote_average}}</h5></div> 
+          </div>
+          </div>
+        </a>
+
+
+      </div>
+  </div>
+
+
+  

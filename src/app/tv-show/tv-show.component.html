@@ -1,0 +1,28 @@
+
+<div class="row">
+    <div class="header col-md-4 d-flex align-items-center justify-content-center py-5 mt-5">
+      <h2>trending TV-show</h2>
+      <h1>new</h1>
+    </div>
+  <div *ngFor="let Tvs of trendingTv" class="col-md-2 py-3">  
+  <a [routerLink]="['/tvDetails', Tvs.id ]">
+    <div class="tv text-center">
+
+        <div class="img">
+          <div class="overlay">
+            <h4>Show Details</h4>
+          </div>
+          <img [src]="imagePrefix + Tvs.poster_path" alt="movie images" class="w-100">
+        </div>
+
+        <div class="tv-info">
+          <h6 class="pt-3">{{Tvs.name}}</h6>
+          <p>{{Tvs.first_air_date}}</p>
+          <div class="ratings" ><h5>{{Tvs.vote_average}}</h5></div> 
+        </div>
+
+    </div>
+  </a>  
+
+  </div>
+</div>

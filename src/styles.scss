@@ -1,0 +1,19 @@
+$fontFamily:'MuseoModerno', cursive;
+$mainColor:#f8f8f8;
+$secondColor:#ef4836;
+$darkcolor:#2c2c2c;
+$paraColor: #888888;
+$boxShadow:0 5px 13px 0px rgba(0,0,0, .1);
+$movieMainColor:#c8c8c8;
+body{
+    font-family: $fontFamily;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.89), rgba(32, 32, 32, 0.8)), url(./assets/bg1.jpg);
+   background-position: center center;
+   background-size: cover;
+   background-attachment: fixed;
+   color: $mainColor !important;
+   overflow-x: hidden;
+}
+body p{
+  color: $movieMainColor;
+}

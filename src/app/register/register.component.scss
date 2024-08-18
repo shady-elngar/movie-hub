@@ -1,0 +1,31 @@
+.register{
+box-shadow: -1px -1px 35px -3px rgba(192, 111, 111, 0.22);
+border: solid 1px #B3404A ;
+}
+.register label{
+    color: #888888;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.btn{
+    background-color: transparent ;
+    border-color: #B3404A ;
+    color: #ffffff;
+    position: relative;
+}
+.btn::after{
+    content: '';
+    display: inline-block;
+    background-color:#B3404A ;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transition: all .5s ease-in-out;
+    z-index: -1;
+}
+.btn:hover::after{
+ height: 100%;
+}

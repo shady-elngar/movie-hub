@@ -1,0 +1,33 @@
+<div class="movie-details">
+
+<div *ngIf="errVisibility == true" class="row">
+
+    <div class="col-md-4">
+        <img [src]="imagePrefix + moviesDetails.poster_path" alt="" class="w-100">
+    </div>
+
+    <div class="col-md-6">
+      <div class="movie-info">
+        <h5 class="header">overview</h5>
+        <p class="lead ">{{moviesDetails.overview}} </p>
+        <h5 class="header">popularity</h5>
+        <h6>{{moviesDetails.popularity}}</h6>
+        <h5 class="header">vote average</h5>
+        <h6 class="lead ">{{moviesDetails.vote_average}}</h6>
+      </div>
+    </div>
+
+    <div class="col-md-2"> 
+        <div *ngFor="let movie of topTen" class="movie-trend ">
+        <img [src]="imagePrefix + movie.poster_path" alt="" class="w-75 d-flex py-2 ">
+       </div>
+    </div>
+
+</div>
+
+ 
+
+</div>
+
+
+

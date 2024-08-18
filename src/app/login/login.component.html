@@ -1,0 +1,32 @@
+    
+<form [formGroup]="loginForm" (ngSubmit)='getFormData(loginForm)' class="login m-auto w-75 p-5  rounded-lg">
+
+    <div class="form-group">
+       <label>E-MAIL :</label>
+       <input [class.is-invalid]='loginForm.get("email").invalid == true && loginForm.get("email").touched == true' 
+       formControlName='email' type="email" name="emil" class="form-control" placeholder="Example@example.com" aria-describedby="helpId">
+       <span *ngIf='loginForm.get("email").invalid == true && loginForm.get("email").touched == true'
+       class="m-3 p-2 d-block alert alert-danger">E-mail Name Not Valid must have @example.com</span>
+    </div>
+
+    <div class="form-group">
+        <label>password :</label>
+        <input [class.is-invalid]='loginForm.get("password").invalid == true && loginForm.get("password").touched == true' 
+         formControlName='password' type="text" name="password" class="form-control" placeholder="Enter your password" aria-describedby="helpId">
+        <span
+        *ngIf='loginForm.get("password").invalid == true && loginForm.get("password").touched == true'
+        class="m-3 p-2 d-block alert alert-danger">password must start with capital letter and includes numbers</span>
+    </div>
+  
+    <button [disabled]='loginForm.invalid == true' type="submit" class="btn  px-5 m-auto w-100">Login</button>
+     
+     <div class="regist text-capitalize d-flex justify-content-center align-items-center mt-3">
+       <span class="text-muted"> not registerd ?</span>
+      <a class="text-info text-decoration-none ml-2" routerLink='/register'>creat an accounr</a>
+     </div>
+
+    <div *ngIf='registErr' class="alert alert-danger py-3 mt-4">
+        {{registErr}}
+    </div>
+       
+</form>

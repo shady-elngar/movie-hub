@@ -1,0 +1,37 @@
+<nav id="navi" class="navbar navbar-expand-sm navbar-dark bg-light w-100 text-center">
+    <a class="navbar-brand d-flex align-items-center justify-content-center" href="#">
+       <img src="../../assets/logo.png" alt="logo" class="imgs"> 
+       <div class="pt-3">moviesHub</div>
+    </a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav m-auto py-2 mt-3 text-uppercase">
+            <li class="nav-item px-3">
+                <a *ngIf='isLogin == true' class="text-decoration-none" routerLink='home'>home</a>
+            </li>
+            <li class="nav-item px-3">
+                <a *ngIf='isLogin == true' class="text-decoration-none" routerLink='movies'>movies</a>
+            </li>
+            <li class="nav-item px-3">
+                <a *ngIf='isLogin == true' class="text-decoration-none" routerLink='tv-show'>tv-show</a>
+            </li>
+            <li class="nav-item px-3">
+                <a *ngIf='isLogin == true' class="text-decoration-none" routerLink='celeb'>celebrity</a>
+            </li>    
+        </ul>
+
+       <div class="btnForm">
+           <button type="button" class="btn btn-info">
+              <a class="text-decoration-none"  routerLink='register'> SIGNUP</a>
+            </button>
+           <button type="button" class="btn btn-primary ml-3">
+            <a class="text-decoration-none "   routerLink='login'> LOGIN</a>
+           </button>
+        </div> 
+
+       
+    </div>
+</nav>

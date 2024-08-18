@@ -1,0 +1,53 @@
+  <form [formGroup]="resgisterForm" (ngSubmit)='getFormData(resgisterForm)' class="register m-auto w-75 p-5  rounded-lg">
+<div class="name d-flex">
+    <div class="form-group w-50 mr-2">
+      <label>FIRST NAME :</label>
+      <input [class.is-invalid]='resgisterForm.get("first_name").invalid == true && resgisterForm.get("first_name").touched == true' 
+      formControlName='first_name' type="text" name="firstName" class="form-control" placeholder="Enter your first name" aria-describedby="helpId">
+      <span
+      *ngIf='resgisterForm.get("first_name").invalid == true && resgisterForm.get("first_name").touched == true'
+      class=" m-3 p-2 d-block alert alert-danger">First name must be between 3 and 10 letters</span>
+    </div>
+
+    <div class="form-group w-50 ml-2">
+      <label>LAST NAME :</label>
+      <input [class.is-invalid]='resgisterForm.get("last_name").invalid == true && resgisterForm.get("last_name").touched == true' 
+      formControlName='last_name' type="text" name="last_name" class="form-control" placeholder="Enter your last name" aria-describedby="helpId">
+      <span *ngIf='resgisterForm.get("last_name").invalid == true && resgisterForm.get("last_name").touched == true' 
+      class="m-3 p-2 d-block alert alert-danger">last name must be between 3 and 10 letters</span>
+    </div>
+</div>
+
+    <div class="form-group">
+      <label>E-MAIL :</label>
+      <input [class.is-invalid]='resgisterForm.get("email").invalid == true && resgisterForm.get("email").touched == true' 
+       formControlName='email' type="email" name="emil" class="form-control" placeholder="Example@example.com" aria-describedby="helpId">
+      <span *ngIf='resgisterForm.get("email").invalid == true && resgisterForm.get("email").touched == true'
+       class="m-3 p-2 d-block alert alert-danger">E-mail Name Not Valid must have @example.com</span>
+    </div>
+
+    <div class="form-group">
+      <label>AGE :</label>
+      <input [class.is-invalid]='resgisterForm.get("age").invalid == true && resgisterForm.get("age").touched == true' 
+       formControlName='age' type="text" name="age" class="form-control" placeholder="Enter your age" aria-describedby="helpId">
+      <span
+      *ngIf='resgisterForm.get("age").invalid == true && resgisterForm.get("age").touched == true'
+      class="m-3 p-2 d-block alert alert-danger">Age Must Be Between 18  and 60</span>
+    </div>
+
+    <div class="form-group">
+      <label>password :</label>
+      <input [class.is-invalid]='resgisterForm.get("password").invalid == true && resgisterForm.get("password").touched == true' 
+       formControlName='password' type="text" name="password" class="form-control" placeholder="Enter your password" aria-describedby="helpId">
+      <span
+      *ngIf='resgisterForm.get("password").invalid == true && resgisterForm.get("password").touched == true'
+      class="m-3 p-2 d-block alert alert-danger">password must start with capital letter and includes numbers</span>
+    </div>
+
+    <button [disabled]='resgisterForm.invalid == true' type="submit" class="btn px-5 m-auto w-100">SignUp</button>
+   
+    <div *ngIf='registErr' class="alert alert-danger py-3 mt-4">
+      {{registErr}}
+    </div>
+     
+  </form>
